@@ -1,0 +1,19 @@
+const path = require('path')
+import babel from 'rollup-plugin-babel';
+
+const resolve = function(filePath) {
+    return path.join(__dirname,'..',filePath)
+}
+
+module.exports = {
+    input: resolve('src/index.js'),
+    output: {
+        file: resolve('dist/index.js'),
+        format: 'umd',
+    },
+    plugins: [
+        babel({
+            exclude: 'node_modules/**',
+        }),
+      ],
+}

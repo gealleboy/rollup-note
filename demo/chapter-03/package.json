@@ -1,0 +1,13 @@
+{
+    "name": "chapter-03",
+    "version": "0.0.1",
+    "description": "study",
+    "scripts": {
+        "build": "rollup --config build/rollup.config.js"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "rollup-plugin-babel": "^4.4.0"
+    }
+}
