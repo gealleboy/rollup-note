@@ -1,24 +1,33 @@
 (function (factory) {
-	typeof define === 'function' && define.amd ? define(factory) :
-	factory();
+    typeof define === 'function' && define.amd ? define(factory) :
+    factory();
 }((function () { 'use strict';
 
-	const arr1 = [1, 2, 3];
-	const arr2 = [4, 5, 6];
-	const result = [...arr1, ...arr2];
-	console.log(result); // class Objs{
-	//     constructor(){
-	//         this.name = "a"
-	//     }
-	//     setName=(name)=>{
-	//         this.name = name;
-	//     }
-	//     getName =()=>{
-	//         console.log(this.name)
-	//     }
-	// }
-	// let newObj = new Objs()
-	// newObj.setName('b');
-	// newObj.getName();
+    function demo() {
+      return new Promise((resolve, reject) => {
+        try {
+          setTimeout(() => {
+            const obj1 = {
+              a: 1
+            };
+            const obj2 = {
+              b: 2
+            };
+            resolve({ ...obj1,
+              ...obj2
+            });
+          }, 1000);
+        } catch (error) {
+          reject(error);
+        }
+      });
+    }
+
+    async function initDemo() {
+      let data = await demo();
+      console(data);
+    }
+
+    initDemo();
 
 })));

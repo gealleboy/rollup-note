@@ -1,1 +1,0 @@
-define(["lib/hello","lib/world"],function(t,e){"use strict";return t=t&&Object.prototype.hasOwnProperty.call(t,"default")?t.default:t,e=e&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e,{init:function(){console.log([].concat([1,2,3],[4,5,6])),t.init(),e.init()}}});

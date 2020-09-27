@@ -122,7 +122,7 @@
 
             case 2:
               data = _context.sent;
-              console(data);
+              console.log(data);
 
             case 4:
             case "end":

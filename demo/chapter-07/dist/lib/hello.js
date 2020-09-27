@@ -1,16 +1,1 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.Hello = factory());
-}(this, (function () { 'use strict';
-
-  var hello = {
-    init: function init() {
-      console.log('this lib/hello module!');
-    }
-  };
-
-  return hello;
-
-})));
-//# sourceMappingURL=hello.js.map
+define("lib/hello",function(){"use strict";return{init:function(){console.log("this lib/hello module")}}});

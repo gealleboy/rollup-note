@@ -1,1 +1,141 @@
-!function(e){"function"==typeof define&&define.amd?define(e):e()}(function(){"use strict";function a(e,t,r,n,o,c,i){try{var u=e[c](i),a=u.value}catch(e){return void r(e)}u.done?t(a):Promise.resolve(a).then(n,o)}function t(t,e){var r=Object.keys(t);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(t);e&&(n=n.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),r.push.apply(r,n)}return r}function r(o){for(var e=1;e<arguments.length;e++){var c=null!=arguments[e]?arguments[e]:{};e%2?t(Object(c),!0).forEach(function(e){var t,r,n;t=o,n=c[r=e],r in t?Object.defineProperty(t,r,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[r]=n}):Object.getOwnPropertyDescriptors?Object.defineProperties(o,Object.getOwnPropertyDescriptors(c)):t(Object(c)).forEach(function(e){Object.defineProperty(o,e,Object.getOwnPropertyDescriptor(c,e))})}return o}function e(){var u;return u=regeneratorRuntime.mark(function e(){var t;return regeneratorRuntime.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,new Promise(function(e,t){try{setTimeout(function(){e(r({},{a:1},{},{b:2}))},1e3)}catch(e){t(e)}});case 2:t=e.sent,console.log(t);case 4:case"end":return e.stop()}},e)}),(e=function(){var e=this,i=arguments;return new Promise(function(t,r){var n=u.apply(e,i);function o(e){a(n,t,r,o,c,"next",e)}function c(e){a(n,t,r,o,c,"throw",e)}o(void 0)})}).apply(this,arguments)}!function(){e.apply(this,arguments)}()});
+(function (factory) {
+  typeof define === 'function' && define.amd ? define(factory) :
+  factory();
+}((function () { 'use strict';
+
+  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+      var info = gen[key](arg);
+      var value = info.value;
+    } catch (error) {
+      reject(error);
+      return;
+    }
+
+    if (info.done) {
+      resolve(value);
+    } else {
+      Promise.resolve(value).then(_next, _throw);
+    }
+  }
+
+  function _asyncToGenerator(fn) {
+    return function () {
+      var self = this,
+          args = arguments;
+      return new Promise(function (resolve, reject) {
+        var gen = fn.apply(self, args);
+
+        function _next(value) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+        }
+
+        function _throw(err) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+        }
+
+        _next(undefined);
+      });
+    };
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
+  }
+
+  function demo() {
+    return new Promise(function (resolve, reject) {
+      try {
+        setTimeout(function () {
+          var obj1 = {
+            a: 1
+          };
+          var obj2 = {
+            b: 2
+          };
+          resolve(_objectSpread2({}, obj1, {}, obj2));
+        }, 1000);
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+
+  function initDemo() {
+    return _initDemo.apply(this, arguments);
+  }
+
+  function _initDemo() {
+    _initDemo = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var data;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return demo();
+
+            case 2:
+              data = _context.sent;
+              console.log(data);
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _initDemo.apply(this, arguments);
+  }
+
+  initDemo();
+  console.log('1111');
+
+})));
+//# sourceMappingURL=index.js.map

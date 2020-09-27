@@ -12,7 +12,6 @@ config.plugins = [
     ...[
         server({
             port: PORT,
-
             contentBase: [resolve('example'), resolve('dist')]
         })
     ]

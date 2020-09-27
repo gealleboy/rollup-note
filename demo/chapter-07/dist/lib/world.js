@@ -1,16 +1,1 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.World = factory());
-}(this, (function () { 'use strict';
-
-  var world = {
-    init: function init() {
-      console.log('this lib/world module!');
-    }
-  };
-
-  return world;
-
-})));
-//# sourceMappingURL=world.js.map
+define("lib/world",function(){"use strict";return{init:function(){console.log("this lib/world module")}}});

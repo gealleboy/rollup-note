@@ -5,4 +5,5 @@ async function initDemo(){
     let data = await demo();
     console.log(data);
 }
-initDemo()
+initDemo();
+console.log('1111');
